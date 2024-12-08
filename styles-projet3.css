@@ -1,0 +1,332 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le body occupe toute la hauteur de la fenêtre */
+}
+
+/* Header Section */
+.header {
+    display: flex; /* Alignement horizontal */
+    justify-content: space-between; /* Espacement entre gauche et droite */
+    align-items: center; /* Alignement vertical centré */
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+}
+
+/* Left Section */
+.header-left {
+    display: flex;
+    flex-direction: column; /* Logo et navigation empilés verticalement */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center; /* Aligner le logo et le texte verticalement */
+    gap: 10px; /* Espace entre le logo et le texte */
+}
+
+/* Logo Icon with Animation */
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* Masque le contenu en dehors du cercle */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Default text inside the logo */
+.logo-icon::before {
+    content: "RV"; /* Texte par défaut (initiales) */
+    position: absolute;
+    font-size: 18px;
+    color: #3498db;
+    transition: opacity 0.3s ease; /* Transition pour masquer le texte */
+}
+
+/* Hidden image to appear on hover */
+.logo-icon::after {
+    content: "";
+    position: absolute;
+    background-image: url("Images/bonhomme.png"); /* Image à afficher */
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Invisible par défaut */
+    transition: opacity 0.3s ease; /* Animation d'apparition */
+}
+
+/* Hover effect */
+.logo-icon:hover {
+    background-color: #2980b9; /* Couleur de fond changée */
+    transform: rotate(360deg); /* Animation de rotation */
+}
+
+.logo-icon:hover::before {
+    opacity: 0; /* Masquer le texte */
+}
+
+.logo-icon:hover::after {
+    opacity: 1; /* Faire apparaître l'image */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #2980b9;
+    color: #f4f4f4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.8);
+}
+
+/* Profile Section */
+.profile-container {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.profile-picture {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1; /* Permet au main de prendre tout l'espace restant */
+}
+
+/* Project Details */
+.project-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.project-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.project-image img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Position du bouton Retour */
+.back-button-container {
+    position: fixed;
+    bottom: 200px; /* Positionner le bouton juste au-dessus du footer */
+    right: 20px;  /* Positionner le bouton à droite */
+    z-index: 10;  /* Assurer que le bouton soit au-dessus des autres éléments */
+}
+
+/* Style du bouton Retour */
+.back-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Ceci permet au footer de se coller en bas */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 30px;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.8);
+}
+
+.social-icons a:active {
+    transform: rotate(360deg);
+    color: #2980b9;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+        flex-direction: column; /* Change to column layout for smaller screens */
+        align-items: center;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .profile-container {
+        height: 120px;
+        width: 120px;
+    }
+
+    .carousel-slide {
+        height: 250px; /* Réduit la taille du carousel */
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 14px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Reduce the gap between navigation items */
+    }
+
+    .project-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .project-image img {
+        max-width: 100%;
+    }
+
+    .back-button-container {
+        bottom: 100px; /* Positionner le bouton juste au-dessus du footer */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .contact form {
+        margin: 0 10px;
+    }
+
+    .social-icons a {
+        font-size: 25px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Reduce the gap between navigation items */
+    }
+
+    .project-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .project-image img {
+        max-width: 100%;
+    }
+
+    .back-button-container {
+        bottom: 100px; /* Positionner le bouton juste au-dessus du footer */
+    }
+}

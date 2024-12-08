@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles-chargement.css">
+    <link rel="icon" href="Images/android-chrome-192x192.png" type="image/png">
+</head>
+<body>
+    <!-- Écran de chargement -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <p>Chargement...</p>
+    </div>
+
+    <!-- Contenu de la page -->
+    <div id="content" class="hidden">
+        <header>
+            <h1>Mon Portfolio</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Bienvenue sur mon site !</h2>
+                <p>Voici quelques informations à propos de moi...</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script de redirection après 2 secondes -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                // Redirige vers index.html après 2 secondes
+                window.location.href = 'index.html';
+            }, 2000); // 2000ms = 2 secondes
+        };
+    </script>
+</body>
+</html>
+
+
+

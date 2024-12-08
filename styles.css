@@ -1,0 +1,810 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* Flexbox pour organiser les éléments en colonne */
+    min-height: 100vh; /* S'assure que la hauteur totale est de 100% */
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    flex-direction: column; /* Garder la structure initiale */
+    align-items: center; /* Centrer horizontalement */
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center; /* Centrer verticalement */
+    gap: 10px; /* Espacement entre le logo et le texte */
+    justify-content: center; /* Centrer horizontalement */
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.logo-icon::before {
+    content: "RV"; /* Texte par défaut */
+    position: absolute;
+    font-size: 18px;
+    color: #3498db;
+    transition: opacity 0.3s ease;
+}
+
+.logo-icon::after {
+    content: "";
+    position: absolute;
+    background-image: url("Images/bonhomme.png");
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo-icon:hover {
+    background-color: #2980b9;
+    transform: rotate(360deg);
+}
+
+.logo-icon:hover::before {
+    opacity: 0;
+}
+
+.logo-icon:hover::after {
+    opacity: 1;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: white;
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #2980b9;
+    color: #f4f4f4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.8);
+}
+
+/* Profile Section */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.profile-picture {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Bouton pour activer le mode sombre */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
+    color: #f1c40f; /* Couleur jaune au survol */
+}
+
+/* Transition globale pour tout le site */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transition pour le fond et le texte */
+}
+
+body.dark-mode {
+    background-color: #121212; /* Fond noir pour le mode sombre */
+    color: #f4f4f4; /* Texte gris clair */
+}
+
+/* Header et Footer */
+header,
+footer,
+nav,
+.news-box,
+.contact,
+.projet-container .projet {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition fluide */
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1f1f1f; /* Noir doux pour header et footer */
+    color: #f4f4f4; /* Texte blanc */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+nav ul li a {
+    color: inherit; /* Hérite de la couleur du parent */
+}
+
+/* News Box */
+body.dark-mode .news-box {
+    position: fixed;
+    top: 150px;
+    width: 320px;
+    background-color: #121212; /* Fond sombre */
+    border: 1px solid #444; /* Bordure discrète */
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #ffffff; /* Texte blanc */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Ombre élégante */
+    z-index: 10;
+    height: calc(100vh - 150px - 60px);
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, #121212, #1f1f1f); /* Dégradé sombre */
+}
+
+/* Survol des encadrés */
+body.dark-mode .news-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Style des titres */
+body.dark-mode .news-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #3498db; /* Titre bleu clair */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Informations des news items */
+body.dark-mode .news-box .news-item {
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #1e1e1e; /* Fond gris foncé */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Encadrés et texte */
+body.dark-mode .news-box .news-item .date {
+    font-size: 14px;
+    color: #ffffff; /* Blanc pour la date */
+    margin-bottom: 10px;
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .news-box .news-item h4 {
+    font-size: 16px;
+    color: #3498db; /* Bleu clair */
+    font-weight: bold;
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .news-box .news-item p {
+    font-size: 14px;
+    color: #ffffff; /* Texte blanc */
+    line-height: 1.5;
+    transition: color 0.5s ease;
+}
+
+/* Bouton "En savoir plus" */
+body.dark-mode .news-box .news-item a {
+    font-size: 14px;
+    color: #3498db; /* Bleu clair */
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .news-box .news-item a:hover {
+    background-color: #3498db;
+    color: white; /* Texte noir au survol */
+    transform: translateY(-3px);
+}
+
+/* Contact Section */
+body.dark-mode .contact {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+}
+
+body.dark-mode .contact input,
+body.dark-mode .contact textarea {
+    background-color: #2c2c2c;
+    color: #f4f4f4;
+    border: 1px solid #555;
+}
+
+body.dark-mode .contact button {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+/* Projets */
+body.dark-mode .projet-container .projet {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+/* Carrousel */
+body.dark-mode .carousel {
+    background-color: #1e1e1e;
+}
+
+/* Main Section */
+main {
+    position: relative;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Encadrés des actualités */
+.news-box {
+    position: fixed; /* Fixe les encadrés à l'écran */
+    top: 150px; /* Décalage pour ne pas chevaucher le header */
+    width: 320px; /* Largeur augmentée pour plus d'espace */
+    background-color: #ffffff; /* Fond blanc */
+    border: 1px solid #3498db; /* Bordure plus fine et élégante */
+    padding: 25px;
+    border-radius: 15px; /* Coins plus arrondis */
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Ombre plus douce et marquée */
+    z-index: 10; /* Pour s'assurer que les encadrés sont au-dessus des autres éléments */
+    height: calc(100vh - 150px - 60px); /* Hauteur de la fenêtre moins l'espace pour le header et le footer */
+    overflow-y: auto; /* Permet le défilement si le contenu dépasse la hauteur */
+    transition: all 0.3s ease; /* Animation de transition douce */
+    background: linear-gradient(to bottom, #ffffff, #f7f7f7); /* Dégradé léger pour un effet élégant */
+}
+
+/* Effet au survol des encadrés */
+.news-box:hover {
+    transform: translateY(-5px); /* Animation subtile de mouvement au survol */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre plus marquée pour un effet flottant */
+}
+
+/* Titres des encadrés */
+.news-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #2980b9; /* Titre plus foncé pour un contraste agréable */
+    font-weight: bold;
+    text-transform: uppercase; /* Majuscules pour un effet plus moderne */
+    letter-spacing: 1px; /* Espacement léger entre les lettres */
+}
+
+/* Informations sur les actualités */
+.news-box .news-item {
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #f7f7f7; /* Fond clair pour chaque item */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Ombre subtile pour chaque item */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Date et description */
+.news-box .news-item .date {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.news-box .news-item h4 {
+    font-size: 16px;
+    color: #2980b9;
+    font-weight: bold;
+}
+
+.news-box .news-item p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Bouton d'action "En savoir plus" */
+.news-box .news-item a {
+    font-size: 14px;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.news-box .news-item a:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Encadré gauche */
+.news-box.left {
+    left: 0; /* Encadré à gauche */
+}
+
+/* Encadré droit */
+.news-box.right {
+    right: 0; /* Encadré à droite */
+}
+
+/* Style des images au-dessus de chaque titre */
+.news-item-header {
+    margin-bottom: 15px;
+}
+
+.news-item-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.news-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.news-item-header {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.news-item-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+h4 a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h4 a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.en-savoir-plus {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.en-savoir-plus:hover {
+    text-decoration: underline;
+}
+
+/* Styles du carrousel */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden; /* Cache les images en dehors du conteneur */
+    margin: auto;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease; /* Transition fluide lors du défilement */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Chaque image occupe 100% de la largeur du carrousel */
+    display: flex;
+    justify-content: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style du bouton pour le CV */
+.cv-button {
+    background-color: #3498db; /* Couleur de fond bleu */
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Retirer la décoration de lien */
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #2980b9; /* Couleur bleu plus foncée au survol */
+}
+
+/* Projects Section */
+.projets {
+    margin-bottom: 40px;
+}
+
+.projet-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.projet {
+    perspective: 1000px;
+}
+
+.projet-inner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.projet-front,
+.projet-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.projet-front {
+    background-color: #dfe6e9;
+    z-index: 2;
+}
+
+.projet-back {
+    background-color: #95a5a6;
+    transform: rotateY(180deg);
+}
+
+.projet:hover .projet-inner {
+    transform: rotateY(180deg);
+}
+
+.projet {
+    margin: 20px;
+}
+
+.projet h3 {
+    color: black; /* Change la couleur du texte à noir */
+}
+
+.projet p {
+    color: black; /* Change la couleur du texte à noir */
+}
+
+/* Contact Section */
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin-bottom: 5px;
+}
+
+.contact input,
+.contact textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.contact button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 30px;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.8);
+}
+
+.social-icons a:active {
+    transform: rotate(360deg);
+    color: #2980b9;
+}
+
+/* RGPD Checkbox */
+.rgpd-checkbox {
+    margin-top: 20px;
+}
+
+.rgpd-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.rgpd-checkbox label {
+    font-size: 14px;
+}
+
+.rgpd-checkbox a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.rgpd-checkbox a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .projet-container {
+        grid-template-columns: 1fr 1fr; /* 2 colonnes sur les petits écrans */
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .profile-container {
+        height: 120px;
+        width: 120px;
+    }
+
+    .carousel-slide {
+        height: 250px; /* Réduit la taille du carousel */
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 14px;
+    }
+
+    /* Supprimer les encadrés des actualités et des dernières nouvelles */
+    .news-box {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .projet-container {
+        grid-template-columns: 1fr; /* 1 colonne sur les écrans très petits */
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .contact form {
+        margin: 0 10px;
+    }
+
+    .social-icons a {
+        font-size: 25px;
+    }
+
+    /* Supprimer les encadrés des actualités et des dernières nouvelles */
+    .news-box {
+        display: none;
+    }
+}
+
+.project-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px; /* Espace entre les éléments */
+    margin: 20px 0;
+}
+
+.project-details > div,
+.project-details > ul,
+.project-details > p {
+    flex: 1; /* Les éléments prennent un espace égal */
+}
+
+.project-details .project-image {
+    max-width: 50%; /* Limite l'image à 50% de la largeur */
+    text-align: right; /* Aligne l'image à droite */
+}
+
+.project-details .project-image img {
+    width: 100%; /* L'image remplit son conteneur */
+    height: auto; /* Maintient les proportions */
+    border-radius: 10px; /* Arrondi les bords */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+}
+
+.project-details .project-features {
+    max-width: 50%; /* Garde la liste des fonctionnalités à gauche */
+}
