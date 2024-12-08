@@ -17,11 +17,11 @@ Détails des Projets : Chaque projet dispose de sa propre page avec une descript
 Navigation Facile : Un bouton de retour pour revenir facilement à la page d'accueil.
 
 3. Page de Bilan
-4. 
+   
 Liste des Créateurs : Une liste des créateurs de portfolios avec leurs informations et descriptions.
 Bouton de Retour : Un bouton pour revenir à la page d'accueil.
 
-5. Page de Conditions de Confidentialité
+4. Page de Conditions de Confidentialité
 
 Politique de Confidentialité : Une page détaillant la politique de confidentialité et les conditions de traitement des données personnelles.
 
