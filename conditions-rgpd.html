@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Conditions de Confidentialité</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="Images/android-chrome-192x192.png" type="image/png">
 </head>
@@ -19,34 +19,31 @@
             </p>
 
             <h3>1. Collecte des données personnelles</h3>
-            <p>
-                Nous collectons uniquement les données nécessaires pour vous fournir nos services. Les données collectées incluent :
-                <ul>
-                    <li>Nom et prénom</li>
-                    <li>Adresse e-mail</li>
-                    <li>Message ou contenu que vous partagez via le formulaire de contact</li>
-                </ul>
-            </p>
+            <p>Nous collectons uniquement les données nécessaires pour vous fournir nos services. Les données collectées incluent :</p>
+            <ul>
+                <li>Nom et prénom</li>
+                <li>Adresse e-mail</li>
+                <li>Message ou contenu que vous partagez via le formulaire de contact</li>
+            </ul>
 
             <h3>2. Utilisation des données</h3>
-            <p>
-                Les données collectées sont utilisées pour :
-                <ul>
-                    <li>Répondre à vos demandes de contact</li>
-                    <li>Améliorer nos services</li>
-                    <li>Garantir la sécurité de nos échanges</li>
-                </ul>
-            </p>
+            <p>Les données collectées sont utilisées pour :</p>
+            <ul>
+                <li>Répondre à vos demandes de contact</li>
+                <li>Améliorer nos services</li>
+                <li>Garantir la sécurité de nos échanges</li>
+            </ul>
 
             <h3>3. Vos droits</h3>
+            <p>Vous disposez des droits suivants concernant vos données personnelles :</p>
+            <ul>
+                <li>Droit d'accès : Vous pouvez demander l'accès à vos données.</li>
+                <li>Droit de rectification : Vous pouvez demander la correction de données inexactes.</li>
+                <li>Droit à l'effacement : Vous pouvez demander la suppression de vos données dans certains cas.</li>
+            </ul>
             <p>
-                Vous disposez des droits suivants concernant vos données personnelles :
-                <ul>
-                    <li>Droit d'accès : Vous pouvez demander l'accès à vos données.</li>
-                    <li>Droit de rectification : Vous pouvez demander la correction de données inexactes.</li>
-                    <li>Droit à l'effacement : Vous pouvez demander la suppression de vos données dans certains cas.</li>
-                </ul>
-                Pour exercer vos droits, contactez-nous à l'adresse suivante : <a href="mailto:contact@exemple.com">contact@exemple.com</a>
+                Pour exercer vos droits, contactez-nous à l'adresse suivante : 
+                <a href="mailto:contact@exemple.com">contact@exemple.com</a>
             </p>
 
             <h3>4. Sécurité des données</h3>
@@ -61,12 +58,15 @@
         </section>
         <!-- Navigation Links -->
         <div class="navigation-links">
-            <button onclick="window.location.href='index.html'" class="back-button">Retour</button>
+            <button id="backButton" class="back-button">Retour</button>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Robin VAZ. Tous droits réservés.</p>
     </footer>
+    <script>
+        document.getElementById('backButton').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>
-

@@ -273,7 +273,7 @@ body.dark-mode .news-box .news-item a {
 
 body.dark-mode .news-box .news-item a:hover {
     background-color: #3498db;
-    color: white; /* Texte noir au survol */
+    color: #000000; /* Texte noir au survol */
     transform: translateY(-3px);
 }
 
@@ -807,4 +807,9 @@ footer {
 
 .project-details .project-features {
     max-width: 50%; /* Garde la liste des fonctionnalités à gauche */
+}
+
+/* Centered Heading */
+.centered-heading {
+    text-align: center;
 }
