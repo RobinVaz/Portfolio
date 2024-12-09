@@ -18,7 +18,6 @@ function showSlide(n) {
     } else {
         index = n;
     }
-
     // Animation de la transition des images
     carouselSlides.style.transition = 'transform 0.5s ease';
     carouselSlides.style.transform = `translateX(-${index * 100}%)`;
