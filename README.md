@@ -1,6 +1,5 @@
-Portfolio de Robin Vaz
-
 Présentation du Projet
+
 Ce projet est un portfolio personnel destiné à présenter mes compétences et réalisations dans le domaine du développement web. Le site est conçu pour être à la fois esthétique et fonctionnel, offrant une expérience utilisateur agréable sur tous les appareils.
 
 Fonctionnalités Principales
@@ -18,6 +17,7 @@ Détails des Projets : Chaque projet dispose de sa propre page avec une descript
 Navigation Facile : Un bouton de retour pour revenir facilement à la page d'accueil.
 
 3. Page de Bilan
+   
 Liste des Créateurs : Une liste des créateurs de portfolios avec leurs informations et descriptions.
 Bouton de Retour : Un bouton pour revenir à la page d'accueil.
 
