@@ -1,15 +1,14 @@
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Assure que le body occupe toute la hauteur de la fenêtre */
+    flex-direction: column; /* Flexbox pour organiser les éléments en colonne */
+    min-height: 100vh; /* S'assure que la hauteur totale est de 100% */
 }
 
-/* Header Section */
+/* Section En-tête */
 .header {
     display: flex; /* Alignement horizontal */
     justify-content: space-between; /* Espacement entre gauche et droite */
@@ -19,7 +18,7 @@ body {
     padding: 20px;
 }
 
-/* Left Section */
+/* Section Gauche */
 .header-left {
     display: flex;
     flex-direction: column; /* Logo et navigation empilés verticalement */
@@ -32,7 +31,7 @@ body {
     gap: 10px; /* Espace entre le logo et le texte */
 }
 
-/* Logo Icon with Animation */
+/* Icône de Logo avec Animation */
 .logo-icon {
     width: 50px;
     height: 50px;
@@ -50,7 +49,7 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Default text inside the logo */
+/* Texte par défaut à l'intérieur du logo */
 .logo-icon::before {
     content: "RV"; /* Texte par défaut (initiales) */
     position: absolute;
@@ -59,7 +58,7 @@ body {
     transition: opacity 0.3s ease; /* Transition pour masquer le texte */
 }
 
-/* Hidden image to appear on hover */
+/* Image cachée à afficher au survol */
 .logo-icon::after {
     content: "";
     position: absolute;
@@ -74,7 +73,7 @@ body {
     transition: opacity 0.3s ease; /* Animation d'apparition */
 }
 
-/* Hover effect */
+/* Effet de survol */
 .logo-icon:hover {
     background-color: #2980b9; /* Couleur de fond changée */
     transform: rotate(360deg); /* Animation de rotation */
@@ -88,7 +87,7 @@ body {
     opacity: 1; /* Faire apparaître l'image */
 }
 
-/* Navigation Menu */
+/* Menu de Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -124,7 +123,7 @@ nav ul li a:focus {
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.8);
 }
 
-/* Profile Section */
+/* Section Profil */
 .profile-container {
     height: 80px;
     width: 80px;
@@ -140,7 +139,7 @@ nav ul li a:focus {
     border-radius: 50%;
 }
 
-/* Main Section */
+/* Section Principale */
 main {
     padding: 20px;
     max-width: 1200px;
@@ -148,7 +147,7 @@ main {
     flex-grow: 1; /* Permet au main de prendre tout l'espace restant */
 }
 
-/* Project Details */
+/* Détails du Projet */
 .project-details {
     display: flex;
     justify-content: space-between;
@@ -192,16 +191,15 @@ main {
     background-color: #2980b9;
 }
 
-/* Footer */
+/* Pied de Page */
 footer {
     background-color: #3498db;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: auto; /* Ceci permet au footer de se coller en bas */
 }
 
-/* Social Icons */
+/* Icônes Sociales */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -230,11 +228,11 @@ footer {
     color: #2980b9;
 }
 
-/* Media Queries for Responsiveness */
+/* Requêtes Média pour la Réactivité */
 @media (max-width: 768px) {
     .header {
         padding: 10px;
-        flex-direction: column; /* Change to column layout for smaller screens */
+        flex-direction: column; /* Changer en disposition colonne pour les petits écrans */
         align-items: center;
     }
 
@@ -263,12 +261,12 @@ footer {
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
+        flex-direction: column; /* Empiler les éléments de navigation verticalement */
         margin: 10px 0;
     }
 
     nav ul li {
-        margin: 5px 0; /* Reduce the gap between navigation items */
+        margin: 5px 0; /* Réduire l'espace entre les éléments de navigation */
     }
 
     .project-details {
@@ -304,12 +302,12 @@ footer {
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
+        flex-direction: column; /* Empiler les éléments de navigation verticalement */
         margin: 10px 0;
     }
 
     nav ul li {
-        margin: 5px 0; /* Reduce the gap between navigation items */
+        margin: 5px 0; /* Réduire l'espace entre les éléments de navigation */
     }
 
     .project-details {
